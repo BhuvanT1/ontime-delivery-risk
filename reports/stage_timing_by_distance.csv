@@ -1,0 +1,11 @@
+distance_band,outcome,n_orders,med_handoff_lag_d,med_transit_d,missed_seller_deadline_rate
+a. <200km,late,1116,4.27,10.04,0.4525
+a. <200km,on time,23538,1.67,2.5,0.0787
+b. 200-500km,late,1941,2.92,25.04,0.2483
+b. 200-500km,on time,28294,1.75,6.75,0.0744
+c. 500-1000km,late,1834,3.0,27.67,0.2606
+c. 500-1000km,on time,23928,1.79,8.17,0.0763
+d. 1000km+,late,1598,2.83,32.73,0.2153
+d. 1000km+,on time,13744,1.83,12.42,0.0802
+unknown,late,45,1.96,28.0,0.1111
+unknown,on time,432,1.81,8.31,0.0556

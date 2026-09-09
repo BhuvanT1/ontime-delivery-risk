@@ -1,0 +1,4 @@
+repeat_band,n_customers,n_orders,late_rate,avg_lifetime_value,avg_review
+1 order,90549,90549.0,0.0684,137.96,4.139
+2 orders,2573,5146.0,0.0585,245.35,4.173
+3+ orders,228,775.0,0.049,426.03,4.393

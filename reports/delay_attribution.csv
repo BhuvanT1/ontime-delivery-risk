@@ -1,0 +1,6 @@
+distance_band,n_late_orders,excess_seller_days,excess_carrier_days,pct_seller_side,pct_carrier_side
+a. <200km,1116,6230.0,12622.0,33.0,67.0
+b. 200-500km,1941,7419.0,41017.0,15.3,84.7
+c. 500-1000km,1833,7263.0,39514.0,15.5,84.5
+d. 1000km+,1598,5455.0,37563.0,12.7,87.3
+unknown,45,84.0,1030.0,7.5,92.5

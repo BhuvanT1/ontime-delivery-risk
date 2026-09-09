@@ -1,0 +1,5 @@
+feature,train_min,train_max,test_min,test_max,share_outside,verdict
+at_route_prior_n,0.0,17849.0,0.0,30393.0,0.3548,partial drift -- check
+at_seller_deadline_days,3.0,1052.0,2.0,51.0,0.1573,partial drift -- check
+at_promise_days,8.0,156.0,3.0,73.0,0.0653,partial drift -- check
+at_seller_prior_n,0.0,1389.0,0.0,1780.0,0.0353,partial drift -- check

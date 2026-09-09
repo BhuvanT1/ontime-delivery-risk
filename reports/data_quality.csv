@@ -1,0 +1,29 @@
+check_name,scope,severity,n_fail,n_total,fail_pct,note
+orders.delivered_without_delivery_date,orders,error,8,96478,0.008,status says delivered but no delivery timestamp; excluded from the label
+orders.approved_before_purchase,orders,error,0,99281,0.0,approval timestamp earlier than the purchase timestamp
+orders.promise_before_purchase,orders,error,0,99441,0.0,promised delivery date earlier than the order date
+reviews.score_out_of_range,order_reviews,error,0,100000,0.0,review score outside 1-5
+order_items.product_id_orphans,order_items,error,0,112650,0.0,line items whose product is missing from the product export
+orders.customer_id_orphans,orders,error,0,99441,0.0,orders referencing a customer row that does not exist
+orders.handoff_before_approval,orders,warn,1359,97644,1.392,handed to the carrier before the payment was approved
+reviews.duplicate_review_id,order_reviews,warn,827,100000,0.827,review_id is not unique in the export; it cannot be used as a key
+orders.no_line_items,orders,warn,775,99441,0.779,orders with no line items; cannot be priced or attributed to a seller
+products.missing_category,products,warn,610,32951,1.851,products with no category
+reviews.orders_with_multiple_reviews,order_reviews,warn,555,99441,0.558,"orders carrying more than one review; must be aggregated, not joined"
+customers.zip_without_centroid,customers,warn,279,99441,0.281,customer zip prefixes with no geolocation match; distance is unknown
+reviews.created_before_purchase,order_reviews,warn,75,100000,0.075,review created before the order it reviews
+geolocation.outside_brazil_bbox,geolocation,warn,42,1000163,0.004,coordinates outside Brazil; dropped when building zip centroids
+orders.delivered_before_handoff,orders,warn,23,96475,0.024,delivered to the customer before leaving the seller
+orders.missing_approved_at,orders,warn,19,98816,0.019,non-cancelled orders never approved
+sellers.zip_without_centroid,sellers,warn,7,3095,0.226,seller zip prefixes with no geolocation match
+products.implausible_weight,products,warn,5,32949,0.015,weight non-positive or above 40 kg
+payments.zero_value_non_voucher,order_payments,warn,3,103886,0.003,non-voucher payment rows of zero value
+products.missing_weight_or_dims,products,warn,2,32951,0.006,products with no weight or dimensions
+products.stub_rows_created,products,warn,1,32951,0.003,"product rows with no attributes at all, incl. stubs added at load time"
+orders.no_payment_record,orders,warn,1,99441,0.001,orders with no payment row
+order_items.nonpositive_price,order_items,warn,0,112650,0.0,line items priced at or below zero
+customers.unique_id_reuse,customers,info,3345,99441,3.364,customer_id is per-order; customer_unique_id is the person. Repeat buyers
+order_items.zero_freight,order_items,info,383,112650,0.34,free-shipping line items
+geolocation.state_disagrees_with_customer,geolocation,info,74,15083455,0.0,zip prefixes that straddle a state border in the geolocation table
+orders.missing_carrier_handoff,orders,info,2,96478,0.002,delivered orders with no carrier handoff timestamp
+categories.untranslated,products,info,2,73,2.74,categories with no English translation
