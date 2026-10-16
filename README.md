@@ -1,5 +1,8 @@
 # OnTime — E-commerce Delivery-Risk & Root-Cause Analytics
 
+[![CI](https://github.com/BhuvanT1/ontime-delivery-risk/actions/workflows/ci.yml/badge.svg)](https://github.com/BhuvanT1/ontime-delivery-risk/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 Which orders arrive late, which parts of the network are genuinely worse than
 their geography explains, and whether a risk model can be turned into an
 intervention that actually pays.
@@ -29,6 +32,21 @@ The code exists to make its numbers reproducible.
 The last row is the point of the project. The model is real but weak; the
 segment findings are large and solid. The memo recommends acting on the segments
 and *not* deploying the model as a trigger.
+
+## Figures
+
+All eight are produced by `scripts/04_report.py`.
+
+| | |
+|---|---|
+| ![State SMR forest plot](reports/figures/03_state_smr.png) | ![Excess-day attribution by distance band](reports/figures/04_attribution.png) |
+| **Destination states, adjusted for distance and period.** Right of the line is worse than comparable orders elsewhere; RJ's interval sits clear of 1. | **Where the lost days sit.** Beyond 200 km, 85–87% of the excess is carrier-side, after the seller's handoff. |
+| ![Model ladder PR-AUC](reports/figures/07_models.png) | ![Reliability before and after isotonic calibration](reports/figures/05_calibration.png) |
+| **The model ladder on the test period.** The leaky variant is shown to measure the leak, not as a contender. | **Calibration under a falling base rate.** Isotonic, fitted on validation, pulls the curve back toward the diagonal. |
+| ![Late rate and promise padding by month](reports/figures/01_cohort.png) | ![Late rate by distance](reports/figures/02_distance.png) |
+| **Late rate by month**, with the padded promise underneath: the base rate more than halves across the window. | **Late rate rises with distance**, from about 4% under 50 km to about 12% beyond 2,000 km. |
+| ![Decile lift and capture curve](reports/figures/06_lift.png) | ![Low review scores by days late](reports/figures/08_severity.png) |
+| **Lift and capture** for the champion model: real but weak, which is why the memo does not deploy it. | **Severity and reviews.** Share of 1–2 star reviews by days late; an association, not a measured causal effect. |
 
 ## What this project is careful about
 
@@ -140,6 +158,6 @@ The suite runs 28 checks. The ones that changed how the analysis was built:
 
 ## Data
 
-Public Olist Brazilian E-Commerce dataset (CC BY-NC-SA 4.0). See
+Code is [MIT](LICENSE). The data is the public Olist Brazilian E-Commerce dataset (CC BY-NC-SA 4.0) and is not included. See
 [data/README.md](data/README.md) for how to obtain it and a note on the copy
 used here.
